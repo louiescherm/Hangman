@@ -1,37 +1,43 @@
-var easy = ["tennis", "soccer"];
+var easy = ["football", "soccer"];
 var medium = ["football", "futbol"];
 var hard = ["basketball", "lacrosse"];
 var word = "";
-var guess = 10;
+var guessesLeft = 10;
 var guessedLetters = [];
+var board = "";
 
 function getWord() {
+    guessedLetters = [];
     var value = document.getElementById("difficulty").value;
-    if (value === 1) {
+    if (value === "1") {
         word = easy[Math.floor(Math.random() * easy.length)];
     }
-    if (value === 2) {
-        word = easy[Math.floor(Math.random() * medium.length)];
+    if (value === "2") {
+        word = medium[Math.floor(Math.random() * medium.length)];
     }
     if (value === "3")
-        word = words[Math.floor(Math.random() * hard.length)];
+        word = hard[Math.floor(Math.random() * hard.length)];
+    setBoard();
 }
 
 function setBoard(){
-    var board = "";
+    board = "";
     for (var i = 0; i < word.length; i++){
         if (guessedLetters.indexOf(word[i]) === -1){
             board += "_ ";
-            console.log(board);
         }else{
             board += word[i];
-            console.log(board);
         }
     }
     document.getElementById("board").innerHTML = board;
 }
 
-function guessLetters(){
-    guessedLetters.push(document.getElementById("guess").value);
+function guess(letter){
+    guessedLetters += letter;
     setBoard();
+    if(word.search(letter)===-1) guessesLeft -= 1;
+    if(guessesLeft <= 0){
+        document.getElementById("board").innerHTML = "You Lose" + "<img src='Images/Loser.jpg'>";
+    }
+    if(board.search("_")==-1) document.getElementById("board").innerHTML = "You Win" + "<img src='Images/Winner.jpg'>";
 }

@@ -8,42 +8,44 @@
 </head>
 <body>
 
-<select id="difficulty">
-    <option value="1">easy</option>
-    <option value="2">medium</option>
-    <option value="3">hard</option>
-</select>
-<div><button onclick="getWord()">go</button>
-<div id="letters">
-    <button onclick="a()">a</button>
-    <button onclick="b()">b</button>
-    <button onclick="c()">c</button>
-    <button onclick="d()">d</button>
-    <button onclick="e()">e</button>
-    <button onclick="f()">f</button>
-    <button onclick="g()">g</button>
-    <button onclick="h()">h</button>
-    <button onclick="i()">i</button>
-    <button onclick="j()">j</button>
-    <button onclick="k()">k</button>
-    <button onclick="l()">l</button>
-    <button onclick="m()">m</button>
-    <button onclick="n()">n</button>
-    <button onclick="o()">o</button>
-    <button onclick="p()">p</button>
-    <button onclick="q()">q</button>
-    <button onclick="r()">r</button>
-    <button onclick="s()">s</button>
-    <button onclick="t()">t</button>
-    <button onclick="u()">u</button>
-    <button onclick="v()">v</button>
-    <button onclick="w()">w</button>
-    <button onclick="x()">x</button>
-    <button onclick="y()">y</button>
-    <button onclick="z()">z</button>
-    </div>
-<div id="board"><div>
-    <input type="text" id="guess" placeholder="Guess the word">
-    <button onclick="guess()">send it</button>
+    <select id="difficulty">
+        <option value="1">easy</option>
+        <option value="2">medium</option>
+        <option value="3">hard</option>
+    </select>
+    <button onclick="getWord()">go</button>
+    <div id="letters">
+        <button onclick="guess('a')">a</button>
+        <button onclick="guess('b')">b</button>
+        <button onclick="guess('c')">c</button>
+        <button onclick="guess('d')">d</button>
+        <button onclick="guess('e')">e</button>
+        <button onclick="guess('f')">f</button>
+        <button onclick="guess('g')">g</button>
+        <button onclick="guess('h')">h</button>
+        <button onclick="guess('i')">i</button>
+        <button onclick="guess('j')">j</button>
+        <button onclick="guess('k')">k</button>
+        <button onclick="guess('l')">l</button>
+        <button onclick="guess('m')">m</button>
+        <button onclick="guess('n')">n</button>
+        <button onclick="guess('o')">o</button>
+        <button onclick="guess('p')">p</button>
+        <button onclick="guess('q')">q</button>
+        <button onclick="guess('r')">r</button>
+        <button onclick="guess('s')">s</button>
+        <button onclick="guess('t')">t</button>
+        <button onclick="guess('u')">u</button>
+        <button onclick="guess('v')">v</button>
+        <button onclick="guess('w')">w</button>
+        <button onclick="guess('x')">x</button>
+        <button onclick="guess('y')">y</button>
+        <button onclick="guess('z')">z</button>
+        </div>
+    <div id="board"></div>
+    <br>
+    <!--<input type="text" id="guess" placeholder="Guess the word">-->
+    <!--<button onclick="guess()">send it</button>-->
+    <div id="img"></div>
 </body>
 </html>
